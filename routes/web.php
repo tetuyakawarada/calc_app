@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use LDAP\Result;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return '<h1>welcome</h1>';
 });
+
+Route::get('/calcs', function () {
+    return '<h1>計算アプリ</h1>';
+});
+
+Route::get('/calcs/{num1}/{operator}/{num2}', [App\Http\Controllers\calcs::class, 'calcs']);
