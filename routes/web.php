@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/calcs', function () {
     return view('calcs.calcs');
 });
+
+Route::get('/calcs/{num1}/{operator}/{num2}', function ($num1, $operator, $num2) {
+    return view('calcs.calcs', ['num1' => $num1, 'operator' => $operator, 'num2' => $num2]);
+});
