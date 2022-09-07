@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use LDAP\Result;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,4 @@ Route::get('/calcs', function () {
     return '<h1>計算アプリ</h1>';
 });
 
-Route::get('/calcs/{num1}/{operator}/{num2}', function ($num1, $operator, $num2) {
-    return view('calcs.calcs', ['num1' => $num1, 'operator' => $operator, 'num2' => $num2]);
-});
+Route::get('/calcs/{num1}/{operator}/{num2}', [App\Http\Controllers\calcs::class, 'calcs']);
