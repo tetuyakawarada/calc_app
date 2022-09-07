@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/calcs', function () {
-    return view('calcs.calcs');
+    return '<h1>計算アプリ</h1>';
 });
 
 Route::get('/calcs/{num1}/{operator}/{num2}', function ($num1, $operator, $num2) {
